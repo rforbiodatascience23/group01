@@ -68,6 +68,7 @@ pca_fit |>
   geom_segment(xend = 0, 
                yend = 0, 
                arrow = arrow_style) +
+  labs(title = "Rotation matrix") +
   geom_text(
     aes(label = column),
     hjust = 1, 
