@@ -8,8 +8,7 @@ print("Hello:)")
 
 
 ## Manuel
-
-...
+Hi!
 
 
 ## Quim
