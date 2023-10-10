@@ -1,6 +1,6 @@
 ---
-title: "lab07_group01_assignment.qmd"
-format: 
+title: "Lab 7 Assignment: Group 01"
+format:
   html:
     embed-resources: true
 editor: visual
