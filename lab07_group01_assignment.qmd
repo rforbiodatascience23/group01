@@ -5,6 +5,7 @@ format:
     embed-resources: true
 editor: visual
 ---
+
 # Load Libraries
 ```{r}
 library(tidyverse)
