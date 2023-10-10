@@ -1,5 +1,0 @@
----
-title: "lab07_group_assignment.qmd"
-format: html
-editor: visual
----
