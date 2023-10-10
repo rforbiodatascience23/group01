@@ -5,23 +5,43 @@ format: html
 editor: visual
 ---
 
-## Quarto
+# Lab 7 Exercises
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## T1: Find the GitHub repository for the ggplot2 R-package
 
-## Running Code
+To search for that, we hae to go to the github page <https://github.com/>, login and then search in the search bar for ggplot2, which is going to redirect you into the next page: <https://github.com/tidyverse/ggplot2>.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+### Q1: How many Contributors are there?
 
-```{r}
-1 + 1
-```
+After getting into the page, we can search for the "Contributors" label, which is going to show us how many people work in this repository, we can see that there are +284 contributors!
 
-You can add options to executable code like this
+## T1: Find the GitHub repository for the Linux kernel
 
-```{r}
-#| echo: false
-2 * 2
-```
+Let's dive into this! For that, there is no straight forward page name, instead it is in the linux repository from torvalds showed here: <https://github.com/torvalds/linux>.
 
-The `echo: false` option disables the printing of code (only output is displayed).
+### Q2: How many Contributors are there?
+
+There are many more than ggplot2! There are +14643 contributors.
+
+### Q3: Discuss in your group why having an organised approach to version control is central? And consider the simple contrast of the challenges you were facing when doing the course assignments.
+Mostly to synchronize the work done by multiple people on the same project.
+That would be useful if we could work with that from the beginning since we've had troubles merging all the code we had.
+
+Q4: Again, find the ggplot GitHub site and see if you can find how many branches there are?
+There are 71 branches in ggplot Github.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

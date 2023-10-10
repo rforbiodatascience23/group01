@@ -4,7 +4,10 @@
 
 
 ## Jordan
+
+```{r}
 print("Hello:)")
+```
 
 
 ## Manuel
@@ -13,7 +16,7 @@ Hi!
 
 ## Quim
 
-Hey! Let's write some code 
+Hey! Let's write some code.
 
 ```{r}
 library(tidyverse)
