@@ -28,9 +28,11 @@ pca_fit |>
              .fittedPC2, 
              color = outcome)) + 
   geom_point(size = 1.5) +
+
   scale_color_manual(values = c(malignant = "#D55E00", 
                                 benign = "#0072B2")) +
-  labs(x = "Fitted PC1", 
+  labs(title = "PC coordinates", 
+       x = "Fitted PC1", 
        y = "Fitted PC2", 
        color = "Outcome") +
   theme_half_open(12) + 
