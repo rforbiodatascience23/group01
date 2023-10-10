@@ -4,8 +4,7 @@
 
 
 ## Jordan
-
-...
+print("Hello:)")
 
 
 ## Manuel
