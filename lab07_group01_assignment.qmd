@@ -17,6 +17,9 @@ The biopsy dataset at hand consist in a breast cancer dataset from the Universit
 Through PCA, we seek to reduce the dimensionality of this complex dataset while retaining the essential information, ultimately facilitating the identification of inherent patterns, correlations, and potential insights that can aid in diagnosing and understanding breast cancer. By harnessing the power of PCA, we aim to shed light on the underlying structure of breast cancer biopsy data, fostering a deeper appreciation of its clinical relevance and potential implications for improved patient care and outcomes.
 
 ## Load Libraries
+
+To begin with, it is required to set the libraries that are going to be used during the analysis.
+
 ```{r}
 library(tidyverse)
 library(broom)  # devtools::install_github("tidymodels/broom")
@@ -24,23 +27,29 @@ library(cowplot)
 ```
 
 ## Load Data
+
+Then, the data must be loaded from the main source so it can be reproducible from any local device.
+
 ```{r}
 biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 ```
 
 ## Data Wrangling
+
+Once the dataset is open and available to use, the Principal Component Analysis (PCA) can be performed. 
+To do this, only the numeric values from each attribute have to be selected, to prevend errors, followed by the data scaling. Then the PCA is performed with the prcomp function in order to get the result of the calculations for the 9 Principal Components containing the values of each attribute.
+
 ```{r}
 pca_fit <- biopsy |> 
   select(where(is.numeric)) |> # retain only numeric columns
   prcomp(scale = TRUE) # do PCA on scaled data
 
-pca_fit <- biopsy |> 
-  select(where(is.numeric)) |> # retain only numeric columns
-  scale() |> # scale data
-  prcomp() # do PCA
+pca_fit
 ```
 
 ## Analysis
+Regarding the analysis, first an scatter plot with the fitted PC1 and PC2 is performed, to check the distribution of points according to the outcome values, which were "Benign" and "Malignant". In that plot, it is clear to observe that the values splited by the mentioned condition provides a very different coordinates of points. The values are sparse enough to differentiate points by the outcomes.  
+
 ```{r}
 pca_fit |>
   augment(biopsy) |> # add original dataset back in
@@ -57,7 +66,11 @@ pca_fit |>
        color = "Outcome") +
   theme_half_open(12) + 
   background_grid()
+```
 
+Moreover, a Rotation matrix is performed to observe the relationship between the original variables (attributes) and the principal components (new orthogonal variables) extracted from the data. In the problem case there are 9 eigenvectors for the 9 attributes.
+
+```{r}
 # extract rotation matrix
 pca_fit |>
   tidy(matrix = "rotation")
@@ -88,7 +101,12 @@ pca_fit |>
   ylim(-.5, 1) +
   coord_fixed() + # fix aspect ratio to 1:1
   theme_minimal_grid(12)
+```
+After studying the plot, it is observed that the mitoses vector is the one that has the most variance of the dataset, and therefore it recalls for the Dominant Principal Component.
 
+Finally, the percentage of contribution for each Principal component was plotted to observe that the PC1 has a very high contribution (>60%) compared to the other ones, and therefore it means that the first principal component (PC1) accounts for a significant portion of the total variance present in your data. 
+
+```{r}
 pca_fit |>
   tidy(matrix = "eigenvalues")
 
@@ -101,5 +119,8 @@ pca_fit |>
   scale_y_continuous(labels = scales::percent_format(), 
                      expand = expansion(mult = c(0, 0.01))) +
   theme_minimal_hgrid(12)
-
 ```
+
+## Conclusion
+
+The presented report explains the Principal Component Analysis of the biopsy dataset from the University of Wisconsin Hospitals, and it is able to reduce the dimensionality effectively since we ended up with a >60% of variance explained, and therefore we are able to clearly distinguish the implication of each attribute to the variance analyzed.
