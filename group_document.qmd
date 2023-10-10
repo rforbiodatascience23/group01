@@ -6,6 +6,13 @@
 ## Jordan
 print("Hello:)")
 
+#New feature
+
+library(stringr)
+x <- c("Apple","urmom","sandwich")
+str_length(x)
+
+
 
 ## Manuel
 Hi!
