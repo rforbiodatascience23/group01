@@ -21,5 +21,10 @@ Hello World
 ```{r}
 print("Hello World")
 ```
+## New Feature
+Enter some text, a few code chunks with a bit of R-code of your choosing and save the document
+```{r}
+print("fewcodechunks")
+```
 
 ...
