@@ -6,19 +6,29 @@ format:
 editor: visual
 ---
 
-# Load Libraries
+# Lab 7 Assignment
+
+## Breast Cancer PCA report
+
+In the realm of breast cancer research, the analysis of biopsied tissue samples holds immense promise in unraveling the intricacies of this pervasive disease. Breast cancer is not a singular entity; rather, it encompasses a spectrum of subtypes with varying characteristics and outcomes. To better comprehend the underlying structure and patterns within the data derived from breast cancer biopsies, this assignment embarks on a journey into the world of Principal Component Analysis (PCA).
+
+The biopsy dataset at hand consist in a breast cancer dataset from the University of Wisconsin Hospitals, Madison from Dr. William H. Wolberg. The dataset contains the biopsies of breast tumors for 699 patients and comprises 9 critical features, including clump thickness, cell size, cell shape, adhesion properties, and more, each contributing to the comprehensive assessment of breast cancer cases. The tenth attribute is the true outcome (benign/malignant).
+
+Through PCA, we seek to reduce the dimensionality of this complex dataset while retaining the essential information, ultimately facilitating the identification of inherent patterns, correlations, and potential insights that can aid in diagnosing and understanding breast cancer. By harnessing the power of PCA, we aim to shed light on the underlying structure of breast cancer biopsy data, fostering a deeper appreciation of its clinical relevance and potential implications for improved patient care and outcomes.
+
+## Load Libraries
 ```{r}
 library(tidyverse)
 library(broom)  # devtools::install_github("tidymodels/broom")
 library(cowplot)
 ```
 
-# Load Data
+## Load Data
 ```{r}
 biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 ```
 
-# Data Wrangling
+## Data Wrangling
 ```{r}
 pca_fit <- biopsy |> 
   select(where(is.numeric)) |> # retain only numeric columns
@@ -30,7 +40,7 @@ pca_fit <- biopsy |>
   prcomp() # do PCA
 ```
 
-# Analysis
+## Analysis
 ```{r}
 pca_fit |>
   augment(biopsy) |> # add original dataset back in
