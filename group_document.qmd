@@ -15,7 +15,20 @@
 
 ## Quim
 
-...
+Hey! Let's write some code 
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+Countries <- c("India", "Italy", "Grece", "Spain")
+Population <- c(1408000000, 59110000, 10640000, 47420000)
+df <- data.frame(unlist(Countries), unlist(Population))
+plot <- ggplot(data = df, aes(x = Countries, y = Population)) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_minimal()
+plot
+```
 
 
 ## Xavier
