@@ -79,11 +79,8 @@ pca_fit |>
                yend = 0, 
                arrow = arrow_style) +
   labs(title = "Rotation matrix") +
-  geom_text(
-    aes(label = column),
-    hjust = 1, 
-    nudge_x = -0.02, 
-    color = "#904C2F") +
+  geom_text(aes(label = column),
+            color = "#904C2F") +
   xlim(-1.25, .5) + 
   ylim(-.5, 1) +
   coord_fixed() + # fix aspect ratio to 1:1
