@@ -1,0 +1,8 @@
+---
+title: "lab07_group01_assignment.qmd"
+format: 
+  html:
+    embed-resources: true
+editor: visual
+---
+

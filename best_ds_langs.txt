@@ -9,7 +9,11 @@ Top 10 Data Science Languages of ALL Time:
 3. different
 2. tastes
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. Perl
 =======
 1. Defininely Python
 >>>>>>> cac9379146a232c6ec41b47aeb3f8cd5e556bee1
+=======
+1. R is superiour!
+>>>>>>> 53edbeb12913ec1f849ec0fef57d62808ff63915
