@@ -1,5 +1,7 @@
 # Projects
 *.Rproj
+group01.Rproj
+**/*.Rproj
 
 # History files
 .Rhistory
