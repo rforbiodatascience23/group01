@@ -20,6 +20,7 @@ Through PCA, we seek to reduce the dimensionality of this complex dataset while 
 
 To begin with, it is required to set the libraries that are going to be used during the analysis.
 
+
 ```{r}
 library(tidyverse)
 library(broom)  # devtools::install_github("tidymodels/broom")
@@ -37,6 +38,7 @@ biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 ## Data Wrangling
 
 Once the dataset is open and available to use, the Principal Component Analysis (PCA) can be performed. 
+
 To do this, only the numeric values from each attribute have to be selected, to prevend errors, followed by the data scaling. Then the PCA is performed with the prcomp function in order to get the result of the calculations for the 9 Principal Components containing the values of each attribute.
 
 ```{r}
@@ -57,7 +59,6 @@ pca_fit |>
              .fittedPC2, 
              color = outcome)) + 
   geom_point(size = 1.5) +
-
   scale_color_manual(values = c(malignant = "#D55E00", 
                                 benign = "#0072B2")) +
   labs(title = "PC coordinates", 
@@ -92,16 +93,14 @@ pca_fit |>
                yend = 0, 
                arrow = arrow_style) +
   labs(title = "Rotation matrix") +
-  geom_text(
-    aes(label = column),
-    hjust = 1, 
-    nudge_x = -0.02, 
-    color = "#904C2F") +
+  geom_text(aes(label = column),
+            color = "#904C2F") +
   xlim(-1.25, .5) + 
   ylim(-.5, 1) +
   coord_fixed() + # fix aspect ratio to 1:1
   theme_minimal_grid(12)
 ```
+
 After studying the plot, it is observed that the mitoses vector is the one that has the most variance of the dataset, and therefore it recalls for the Dominant Principal Component.
 
 Finally, the percentage of contribution for each Principal component was plotted to observe that the PC1 has a very high contribution (>60%) compared to the other ones, and therefore it means that the first principal component (PC1) accounts for a significant portion of the total variance present in your data. 
