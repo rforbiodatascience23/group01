@@ -25,7 +25,7 @@ pca_fit %>%
   scale_color_manual(
     values = c(malignant = "#D55E00", benign = "#0072B2")
   ) +
-  labs(x = "Fitted PC1", y = "Fitted PC2", color = "Outcome")+
+  labs(title = "PC coordinates", x = "Fitted PC1", y = "Fitted PC2", color = "Outcome")+
   theme_half_open(12) + background_grid()
 # extract rotation matrix
 pca_fit %>%
